@@ -1,0 +1,6 @@
+/views/*
+/webroot/*
+*.swp
+*.swx
+*.txt
+.git/*

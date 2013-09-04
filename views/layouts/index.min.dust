@@ -1,0 +1,13 @@
+<!doctype html>
+<html>
+  <head>
+    <title>application-name</title>
+    
+    <link rel="stylesheet" href="/css/300c7b20.theme.css">
+  </head>
+  <body>
+    {+body/}
+
+    <script src="/js/8ebf5ff6.libs.js"></script>
+  </body>
+</html>

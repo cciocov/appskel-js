@@ -1,0 +1,11 @@
+{
+  "name": "application-name",
+  "description": "",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.0.8",
+    "jquery": "~2.0.3",
+    "bootstrap": "~3.0.0"
+  }
+}
