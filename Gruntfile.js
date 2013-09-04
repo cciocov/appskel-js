@@ -168,7 +168,7 @@ module.exports = function(grunt) {
           'livereload': true
         },
         'files': [
-          'views/**/*.html',
+          'views/**/*.dust',
           'webroot/**/*.{html,js,css,png,jpg,jpeg,gif,webp,svg}'
         ]
       }
