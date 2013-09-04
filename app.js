@@ -20,10 +20,9 @@ if (optimized) {
 
 // configure:
 app.engine('dust', consolidate.dust);
-app.engine('min.dust', consolidate.dust);
 
-app.set('view engine', (optimized ? 'min.dust' : 'dust'));
-app.set('views', __dirname + '/views');
+app.set('view engine', 'dust');
+app.set('views', __dirname + '/views' + (optimized ? '/min' : ''));
 
 app.use(express.favicon());
 app.use(express.logger());
