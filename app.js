@@ -8,6 +8,9 @@ var express = require('express'),
     RedisStore = require('connect-redis')(express),
     consolidate = require('consolidate');
 
+// load application configuration:
+var cfg = require('./cfg/config');
+
 // create:
 var app = module.exports = express();
 var server = http.createServer(app);
@@ -18,7 +21,7 @@ if (optimized) {
   console.log('Optimized mode enabled.');
 }
 
-// configure:
+// configure express:
 app.engine('dust', consolidate.dust);
 
 app.set('view engine', 'dust');
@@ -59,6 +62,10 @@ require('./cfg/urls')(app);
 require('./cfg/socketio')(server);
 
 // start:
-server.listen(3000, function() {
-  console.log('Application running on port %d with PID %d.', 3000, process.pid);
+server.listen(cfg.port, function() {
+  console.log(
+    'Application running on port %d with PID %d.',
+    cfg.port,
+    process.pid
+  );
 });
