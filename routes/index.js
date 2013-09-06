@@ -23,7 +23,9 @@ module.exports = (function f(dir) {
       routes[items[i]] = f(item_path);
     }
     else {
-      routes[path.basename(items[i], '.js')] = require(item_path);
+      if (item_path.match(/\.js$/i)) {
+        routes[path.basename(items[i], '.js')] = require(item_path);
+      }
     }
   }
 
