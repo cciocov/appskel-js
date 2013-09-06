@@ -18,14 +18,6 @@ module.exports = function(grunt) {
           'dest': 'views/min/'
         }]
       },
-      //'img': {
-      //  'files': [{
-      //    'expand': true,
-      //    'cwd': 'webroot/img/',
-      //    'src': '**/*.{gif,webp}',
-      //    'dest': 'webroot/assets/img/'
-      //  }]
-      //},
       'libs': {
         'files': [{
           'expand': true,
@@ -50,28 +42,6 @@ module.exports = function(grunt) {
       },
       'html': ['views/min/**/*.dust'],
       'css': ['webroot/assets/css/**/*.css']
-    },
-
-    'imagemin': {
-      'all': {
-        'files': [{
-          'expand': true,
-          'cwd': 'webroot/img/',
-          'src': '**/*.{png,jpg,jpeg}',
-          'dest': 'webroot/assets/img/'
-        }]
-      }
-    },
-
-    'svgmin': {
-      'all': {
-        'files': [{
-          'expand': true,
-          'cwd': 'webroot/img/',
-          'src': '**/*.svg',
-          'dest': 'webroot/assets/img/'
-        }]
-      }
     },
 
     'rev': {
@@ -146,8 +116,6 @@ module.exports = function(grunt) {
       'build': {
         'tasks': [
           'copy',
-          //'imagemin',
-          //'svgmin',
           'less'
         ]
       }
