@@ -12,8 +12,8 @@
     {+body/}
 
     <!-- build:js(webroot/) /js/libs.js -->
-    <script type="text/javascript" src="/libs/bower/angular/angular.js"></script>
     <script type="text/javascript" src="/libs/bower/jquery/jquery.js"></script>
+    <script type="text/javascript" src="/libs/bower/angular/angular.js"></script>
     <!-- endbuild -->
   </body>
 </html>
