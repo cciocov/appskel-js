@@ -62,7 +62,7 @@ require('./cfg/urls')(app);
 require('./cfg/socketio')(server);
 
 // start:
-server.listen(cfg.port, function() {
+server.listen(cfg.port, '127.0.0.1', function() {
   console.log(
     'Application running on port %d with PID %d.',
     cfg.port,

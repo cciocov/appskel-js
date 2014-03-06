@@ -13,6 +13,7 @@ var cfg = {
   },
 
   'production': {
+    'port': 8000
   }
 };
 
