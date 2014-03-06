@@ -11,20 +11,24 @@ module.exports = function(grunt) {
 
     'copy': {
       'views': {
-        'files': [{
-          'expand': true,
-          'cwd': 'views/',
-          'src': ['**/*.dust', '!min/**/*.dust'],
-          'dest': 'views/min/'
-        }]
+        'files': [
+          {
+            'expand': true,
+            'cwd': 'views/',
+            'src': ['**/*.dust', '!min/**/*.dust'],
+            'dest': 'views/min/'
+          }
+        ]
       },
-      'libs': {
-        'files': [{
-          'expand': true,
-          'cwd': 'webroot/libs/bower/bootstrap/dist/fonts/',
-          'src': '*',
-          'dest': 'webroot/assets/fonts/'
-        }]
+      'fonts': {
+        'files': [
+          {
+            'expand': true,
+            'cwd': 'webroot/libs/bower/bootstrap/dist/fonts/',
+            'src': '*',
+            'dest': 'webroot/assets/fonts/'
+          }
+        ]
       }
     },
 
@@ -46,7 +50,7 @@ module.exports = function(grunt) {
 
     'rev': {
       'files': {
-        'src': ['webroot/assets/**/*.{js,css,png,jpg,jpeg,gif,webp}']
+        'src': ['webroot/assets/**/*.{js,css}']
       }
     },
 
@@ -90,7 +94,7 @@ module.exports = function(grunt) {
 
     'concurrent': {
       'runapp': {
-        'tasks': ['nodemon:app', 'watch:less', 'watch:livereload'],
+        'tasks': ['nodemon:app', 'watch:less'],
         'options': {
           'logConcurrentOutput': true
         }
@@ -102,7 +106,7 @@ module.exports = function(grunt) {
         }
       },
       'runcluster': {
-        'tasks': ['nodemon:cluster', 'watch:less', 'watch:livereload'],
+        'tasks': ['nodemon:cluster', 'watch:less'],
         'options': {
           'logConcurrentOutput': true
         }
@@ -129,15 +133,6 @@ module.exports = function(grunt) {
       'views': {
         'files': ['views/**/*.dust', '!views/min/**/*.dust'],
         'tasks': ['build']
-      },
-      'livereload': {
-        'options': {
-          'livereload': true
-        },
-        'files': [
-          'views/**/*.dust',
-          'webroot/**/*.{html,js,css,png,jpg,jpeg,gif,webp,svg}'
-        ]
       }
     },
 
