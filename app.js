@@ -4,8 +4,6 @@
 
 var express = require('express'),
     http = require('http'),
-    redis = require('redis'),
-    RedisStore = require('connect-redis')(express),
     consolidate = require('consolidate');
 
 // load application configuration:
@@ -33,12 +31,6 @@ app.use(express.logger());
 app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(express.cookieParser());
-app.use(express.session({
-  'store': new RedisStore({
-    'client': redis.createClient()
-  }),
-  'secret': 'session secret'
-}));
 
 if (optimized) {
   app.use('/appdata', express.static(__dirname + '/webroot/appdata'));
@@ -49,18 +41,13 @@ else {
   app.use(express.static(__dirname + '/webroot'));
 }
 
-if (app.get('env') == 'development') {
-  app.use(require('connect-livereload')({
-  }));
-}
-
 app.use(app.router);
 
 // routing:
 require('./cfg/urls')(app);
 
 // attach socketIO:
-require('./cfg/socketio')(server);
+//require('./cfg/socketio')(server);
 
 // start:
 server.listen(cfg.port, '127.0.0.1', function() {
