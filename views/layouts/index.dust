@@ -7,13 +7,12 @@
     <link type="text/css" href="/libs/bower/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
     <link type="text/css" href="/css/theme.less.css" rel="stylesheet">
     <!-- endbuild -->
-  </head>
-  <body>
-    {+body/}
-
-    <!-- build:js(webroot/) /js/libs.js -->
+    <!-- build:js(webroot/) /js/bundle.js -->
     <script type="text/javascript" src="/libs/bower/jquery/jquery.js"></script>
     <script type="text/javascript" src="/libs/bower/angular/angular.js"></script>
     <!-- endbuild -->
+  </head>
+  <body>
+    {+body/}
   </body>
 </html>

@@ -4,10 +4,9 @@
     <title>application-name</title>
     
     <link rel="stylesheet" href="/css/300c7b20.theme.css">
+    <script src="/js/cd347282.bundle.js"></script>
   </head>
   <body>
     {+body/}
-
-    <script src="/js/8ebf5ff6.libs.js"></script>
   </body>
 </html>
