@@ -26,6 +26,7 @@ app.engine('dust', consolidate.dust);
 
 app.set('view engine', 'dust');
 app.set('views', __dirname + '/views' + (optimized ? '/min' : ''));
+app.enable('trust proxy');
 
 app.use(express.favicon());
 app.use(express.logger());
