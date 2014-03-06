@@ -8,6 +8,12 @@ var cluster = require('cluster'),
 // start a cluster with 1 worker / cpu running the application:
 if (cluster.isMaster) {
   var cpus = os.cpus().length;
+
+  // if we have more than 1 CPU, use all but 1:
+  if (cpus > 1) {
+    cpus -= 1;
+  }
+
   console.log('Starting application cluster with %d workers...', cpus);
 
   for (var i = 0; i < cpus; i++) {
