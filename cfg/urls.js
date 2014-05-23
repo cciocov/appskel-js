@@ -9,4 +9,14 @@ module.exports = function(app) {
     '/',
     routes.home.index
   );
+
+  /**
+   * Generic URLs
+   */
+
+  // render a view:
+  app.get(
+    /^\/views\/(.+)/,
+    routes.generic.views
+  );
 };
