@@ -16,7 +16,7 @@ module.exports = function(grunt) {
             'expand': true,
             'cwd': 'views/',
             'src': ['**/*.dust', '!min/**/*.dust'],
-            'dest': 'views/min/'
+            'dest': 'views/.min/'
           }
         ]
       },
@@ -36,7 +36,7 @@ module.exports = function(grunt) {
       'options': {
         'dest': 'webroot/assets/',
       },
-      'html': 'views/min/**/*.dust'
+      'html': 'views/.min/**/*.dust'
     },
 
     'usemin': {
@@ -44,7 +44,7 @@ module.exports = function(grunt) {
         'dirs': ['webroot/assets/'],
         'basedir': 'webroot/assets/'
       },
-      'html': ['views/min/**/*.dust'],
+      'html': ['views/.min/**/*.dust'],
       'css': ['webroot/assets/css/**/*.css']
     },
 
@@ -70,7 +70,7 @@ module.exports = function(grunt) {
       'views': {
         'files': [{
           'expand': true,
-          'src': 'views/min/**/*.dust'
+          'src': 'views/.min/**/*.dust'
         }]
       },
       'assets': {
@@ -131,7 +131,7 @@ module.exports = function(grunt) {
         'tasks': ['clean:less', 'less']
       },
       'views': {
-        'files': ['views/**/*.dust', '!views/min/**/*.dust'],
+        'files': ['views/**/*.dust', '!views/.min/**/*.dust'],
         'tasks': ['build']
       }
     },

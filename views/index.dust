@@ -1,18 +1,28 @@
 <!doctype html>
-<html>
+<html ng-app="app">
   <head>
+    <meta charset="utf-8">
     <title>application-name</title>
     
     <!-- build:css(webroot/) /css/theme.css -->
     <link type="text/css" href="/libs/bower/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
     <link type="text/css" href="/css/theme.less.css" rel="stylesheet">
     <!-- endbuild -->
+
+    <script type="text/javascript">
+      var cfg = {cfg|s};
+    </script>
+    
     <!-- build:js(webroot/) /js/bundle.js -->
     <script type="text/javascript" src="/libs/bower/jquery/dist/jquery.js"></script>
     <script type="text/javascript" src="/libs/bower/angular/angular.js"></script>
+    <script type="text/javascript" src="/libs/bower/angular-ui-router/release/angular-ui-router.js"></script>
+    <script type="text/javascript" src="/js/app.js"></script>
+    <script type="text/javascript" src="/js/controllers.js"></script>
+    <script type="text/javascript" src="/js/services.js"></script>
     <!-- endbuild -->
   </head>
   <body>
-    {+body/}
+    <div ui-view></div>
   </body>
 </html>

@@ -1,3 +1,8 @@
+var cfg = require('../cfg/config');
+
 exports.index = function(req, res) {
-  res.render('home');
+  res.render('index', {
+    'cfg': JSON.stringify({
+    })
+  });
 };
